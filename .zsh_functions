@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+
+reload() {
+	source "$ZDOTDIR/.zshrc"
+	echo "Reloaded"
+}
+
+do-ls() {emulate -L zsh; l;}
+
+add-zsh-hook chpwd do-ls

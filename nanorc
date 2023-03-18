@@ -1,0 +1,46 @@
+# set tabsize 4
+# set tabstospaces
+# set autoindent
+# set trimblanks
+# set linenumbers
+# set constantshow
+# set titlecolor white,red
+# set keycolor cyan
+# set functioncolor cyan
+# set numbercolor yellow
+# set mouse
+# Remove some existing commands
+unbind ^\ all
+unbind ^o all
+
+# Sane keyboard shortcuts
+bind ^s savefile all
+bind ^q exit all
+bind ^x cut all
+bind ^v paste all
+bind ^c copy all
+bind ^z undo all
+bind ^y redo  all
+bind ^g gotoline all
+bind ^f whereis all
+bind ^q cancel yesno
+bind ^r replace all
+
+# None of these are working
+#bind ^/ comment all
+bind ^SPACE complete all
+bind ^\ browser all
+
+# Display
+set linenumbers
+set showcursor
+set positionlog
+set linenumbers
+set constantshow
+set tabsize 4
+set autoindent
+set mouse
+set whitespace "»⋅"
+set wordchars "_"
+set zap
+include /Users/tjsharley/.config/nano/syntax/*.nanorc

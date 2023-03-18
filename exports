@@ -1,0 +1,45 @@
+# Env Vars for terminal and OS/FS structure
+export IPYTHONDIR="${XDG_CONFIG_HOME}/ipython"
+export GOPATH="$XDG_DATA_HOME/go"
+export ZSH_CACHE_DIR="$HOME/.cache"
+export PYTHONPATH="/opt/homebrew/Cellar/python@3.11/3.11.1/Frameworks/Python.framework/Versions/3.11/bin"
+export PYTHONSTARTUP="$HOME/.config/python3/pythonrc"
+export ANSIBLE_CONFIG="$HOME/.ANSIBLE/ansible.cfg"
+export SETTINGS_FILE_FOR_DYNACONF="$XDG_CONFIG_HOME/global_settings.toml"
+export REDISCLI_HISTFILE="$XDG_DATA_HOME/redis/rediscli_history"
+export MINIKUBE_HOME="$XDG_DATA_HOME/minikube"
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
+#export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
+#export STARSHIP_CONFIG="$XDG_CONFIG_HOME/profile_conf/prompt_conf/starship.toml"
+#export STARSHIP_CACHE="$XDG_CACHE_HOME/starship/cache"
+export PROFILE_CONF_PATH="$XDG_CONFIG_HOME/profile_conf/settings.py"
+export EDITOR="/opt/homenbrew/bin/nano"
+export HOMEBREW_NO_EMOJI=1
+export PATH="$HOME/.local/bin:/opt/homebrew/bin:/opt/homebrew/sbin:$HOME/.rd/bin:$PATH"
+export PATH="$HOME/Library/Python/3.11/bin:$PATH"
+export EDITOR="$HOME/.local/bin/nano"
+
+# State controls
+export PSQL_HISTORY="$XDG_DATA_HOME/psql_history"
+
+# Keys
+export OPENAI_API_KEY="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"
+
+# OS Options
+setopt EXTENDED_HISTORY               # Write the history file in the ':start:elapsed;command' format.
+setopt INC_APPEND_HISTORY             # Write to the history file immediately, not when the shell exits.
+setopt SHARE_HISTORY                  # Share history between all sessions.
+setopt HIST_EXPIRE_DUPS_FIRST         # Expire a duplicate event first when trimming history.
+setopt HIST_IGNORE_DUPS               # Do not record an event that was just recorded again.
+setopt HIST_IGNORE_ALL_DUPS           # Delete an old recorded event if a new event is a duplicate.
+setopt HIST_FIND_NO_DUPS              # Do not display a previously found event.
+setopt HIST_IGNORE_SPACE              # Do not record an event starting with a space.
+setopt HIST_SAVE_NO_DUPS              # Do not write a duplicate event to the history file.
+setopt HIST_VERIFY                    # Do not execute immediately upon history expansion.
+setopt APPEND_HISTORY                 # append to history file
+setopt HIST_NO_STORE                  # Don't store history commands
+setopt AUTO_PUSHD                     # Push the current directory visited on the stack.
+setopt PUSHD_IGNORE_DUPS              # Do not store duplicates in the stack.
+setopt PUSHD_SILENT                   # Do not print the directory stack after pushd
+
+export EXPORT_TEST="TRUE"
