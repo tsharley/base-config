@@ -1,0 +1,43 @@
+#!/usr/bin/env zsh
+
+_main(){
+choice=1
+
+theme_default(){
+  PROMPT='%m%# '
+}
+
+theme_1(){
+  export PROMPT="%F{127}%n%f%F{white}@%f%F{33}%M%f--(%F{127}%d%f)-  -%B%F{33}# %f%b"
+}
+
+theme_2(){
+  export PROMPT=$'%{\e[0;34m%}%B┌─[%b%{\e[0m%}%{\e[1;32m%}%n%{\e[1;34m%}@%{\e[0m%}%{\e[0;36m%}%m%{\e[0;34m%}%B]%b%{\e[0m%} - %b%{\e[0;34m%}%B[%b%{\e[1;37m%}%~%{\e[0;34m%}%B]%b%{\e[0m%} - %{\e[0;34m%}%B[%b%{\e[0;33m%}%!%{\e[0;34m%}%B]%b%{\e[0m%}\n%{\e[0;34m%}%B└─%B[%{\e[1;35m%}$%{\e[0;34m%}%B]%{\e[0m%}%b '
+}
+
+theme_3(){
+  export PROMPT="\[\033[38;5;5m\]\u\[$(tput sgr0)\]\[\033[38;5;4m\]@\[$(tput sgr0)\]\[\033[38;5;5m\]\h:[\[$(tput sgr0)\]\[\033[38;5;4m\]\w\[$(tput sgr0)\]\[\033[38;5;5m\]]:\[$(tput sgr0)\] \[$(tput sgr0)\]"
+}
+
+theme_4(){
+  export PROMPT=$"\[\033[38;5;5m\]\u\[$(tput sgr0)\]\[\033[38;5;4m\]@\[$(tput sgr0)\]\[\033[38;5;14m\]\h\[$(tput sgr0)\]\[\033[38;5;5m\]:[\[$(tput sgr0)\]\[\033[38;5;4m\]\w\[$(tput sgr0)\]\[\033[38;5;5m\]]:\[$(tput sgr0)\] \[$(tput sgr0)\]"
+}
+
+theme_5(){
+  export PROMPT=$"\[\033[38;5;5m\]\u\[$(tput sgr0)\]\[\033[38;5;4m\]@\[$(tput sgr0)\]\[\033[38;5;1m\]\h\[$(tput sgr0)\]\[\033[38;5;5m\]:[\[$(tput sgr0)\]\[\033[38;5;4m\]\w\[$(tput sgr0)\]\[\033[38;5;5m\]]:\[$(tput sgr0)\] \[$(tput sgr0)\]"
+}
+
+theme_6(){
+  export PROMPT=$"\[\033[38;5;12m\]\u@\[$(tput sgr0)\]\[\033[38;5;13m\]\h\[$(tput sgr0)\]\[\033[38;5;12m\]:[\[$(tput sgr0)\]\[\033[38;5;13m\]\w\[$(tput sgr0)\]\[\033[38;5;12m\]]:\[$(tput sgr0)\] \[$(tput sgr0)\]"
+}
+
+theme_7(){
+  export PROMPT=$"\[\033[38;5;4m\]\u@\[$(tput sgr0)\]\[\033[38;5;13m\]\h\[$(tput sgr0)\]\[\033[38;5;4m\]:[\[$(tput sgr0)\]\[\033[38;5;13m\]\w\[$(tput sgr0)\]\[\033[38;5;4m\]]:\[$(tput sgr0)\] \[$(tput sgr0)\]"
+}
+
+[[ $choice == 1 ]] && theme_1
+}
+
+_main
+
+#                    說﵆

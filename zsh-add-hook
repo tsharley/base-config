@@ -19,7 +19,7 @@ hooktypes=(
   chpwd precmd preexec periodic zshaddhistory zshexit
   zsh_directory_name
 )
-local usage="Usage: add-zsh-hook hook function\nValid hooks are:\n  $hooktypes"
+local usage="Usage: zsh-add-hook hook function\nValid hooks are:\n  $hooktypes"
 
 local opt
 local -a autoopts
@@ -91,3 +91,6 @@ else
   fi
   autoload $autoopts -- $fn
 fi
+
+do-ls() {emulate -L zsh; l;}
+zsh-add-hook chpwd do-ls

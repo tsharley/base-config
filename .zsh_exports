@@ -1,4 +1,11 @@
 # Env Vars for terminal and OS/FS structure
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_RUNTIME_DIR="$HOME/.local/bin/run"
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export ZDOTREPO="$HOME/.dot"
 export IPYTHONDIR="${XDG_CONFIG_HOME}/ipython"
 export GOPATH="$XDG_DATA_HOME/go"
 export ZSH_CACHE_DIR="$HOME/.cache"
@@ -9,21 +16,22 @@ export SETTINGS_FILE_FOR_DYNACONF="$XDG_CONFIG_HOME/global_settings.toml"
 export REDISCLI_HISTFILE="$XDG_DATA_HOME/redis/rediscli_history"
 export MINIKUBE_HOME="$XDG_DATA_HOME/minikube"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
-#export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
-#export STARSHIP_CONFIG="$XDG_CONFIG_HOME/profile_conf/prompt_conf/starship.toml"
-#export STARSHIP_CACHE="$XDG_CACHE_HOME/starship/cache"
 export PROFILE_CONF_PATH="$XDG_CONFIG_HOME/profile_conf/settings.py"
-export EDITOR="/opt/homenbrew/bin/nano"
+# export EDITOR="/opt/homenbrew/bin/nano"
 export HOMEBREW_NO_EMOJI=1
 export PATH="$HOME/.local/bin:/opt/homebrew/bin:/opt/homebrew/sbin:$HOME/.rd/bin:$PATH"
 export PATH="$HOME/Library/Python/3.11/bin:$PATH"
 export EDITOR="$HOME/.local/bin/nano"
 
 # State controls
+export HISTFILE="$ZDOTDIR/.zhistory"              # History filepath
+export LESSHISTFILE="$HOME/CACHE/less/history"
+export HISTSIZE=10000                             # Maximum events for internal history
+export SAVEHIST=10000                             # Maximum events in history file
 export PSQL_HISTORY="$XDG_DATA_HOME/psql_history"
 
 # Keys
-export OPENAI_API_KEY="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"
+# export OPENAI_API_KEY="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"
 
 # OS Options
 setopt EXTENDED_HISTORY               # Write the history file in the ':start:elapsed;command' format.

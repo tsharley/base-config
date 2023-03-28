@@ -1,38 +1,43 @@
 #!/usr/bin/env zsh
 
-alias l="ls -oAhF"
-alias sudo="sudo "
-alias pth="<<<${(F)path}"
+# Cross-platform Aliases
+set_common_aliases(){
+alias ..='cd ..'
+alias l="ls -onhAFG"
+alias bkeys="bindkey -L"
+alias ss="sudo "
+#alias pth="<<<${(F)path}"
 alias cs="clear"
 alias gc="git clone"
 alias cheats="curl cheat.sh"
-alias ssv="ssh git.charm.sh"
-alias bs="brew search"
-alias binfo="brew info"
-alias bi="brew install"
-alias bd="brew update"
-alias bu="brew upgrade"
-alias brews='echo "Brews: bd=update, bu=upgrade, bs=search, binfo=info, bi=install"'
-alias python="python3.11"
-alias flushdns="dscacheutil -flushcache"
-alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
-alias tssh="/Applications/Tailscale.app/Contents/MacOS/Tailscale up --ssh"
+alias salias="source ${XDG_CONFIG_HOME}/zsh/.zsh_aliases"
+alias gc="git clone"
 alias p8="ping 8.8.8.8"
-alias postg="$/Applications/Postgres.app/Contents/Versions/15/bin/psql -p5432 \"tjsharley\""
+alias exal="exa -a --long --tree --level=1 --header --inode --icons"
+alias cfgd="code $ZDOTREPO"
 alias cfge="nano ${HOME}/.zshenv"
 alias cfgz="nano ${XDG_CONFIG_HOME}/zsh/.zshrc"
 alias cfga="nano ${XDG_CONFIG_HOME}/zsh/.zsh_aliases"
 alias cfgf="nano ${XDG_CONFIG_HOME}/zsh/.zsh_functions"
+alias cfgx="nano ${XDG_CONFIG_HOME}/zsh/.zsh_exports"
 alias cfgn="nano ${XDG_CONFIG_HOME}/nano/nanorc"
+}
+
+set_macos_aliases(){
+alias flushdns="dscacheutil -flushcache"
+alias bs="brew search"
+alias bfo="brew info"
+alias bi="brew install"
+alias bd="brew update"
+alias bu="brew upgrade"
+alias brews='echo "Brews: bd=update, bu=upgrade, bs=search, binfo=info, bi=install"'
+alias nano="/opt/homebrew/bin/nano"
 alias cfgs="nano ${HOME}/Library/CloudStorage/Box-Box/SSH/config"
-# alias l="exa -a --long --tree --level=1 --header --inode --icons"
+alias tssh="/Applications/Tailscale.app/Contents/MacOS/Tailscale up --ssh"
+alias ssv="ssh git.charm.sh"
+alias python="python3.11"
+alias postg="$/Applications/Postgres.app/Contents/Versions/15/bin/psql -p5432 \"tjsharley\""
+}
 
-
-alias cfgh='echo "\n   Open Config File:  cfg-_\
-\n   ----------------------------------------\
-\n   e - .zshenv        (Environment)\
-\n   z - .zshrc         (Z Shell Options)\
-\n   a - .zsh_aliases   (Alias list)\
-\n   f - .zsh_functions (Function List)\
-\n   n - .nanorc        (Nano Text Editor)\
-\n   s - .ssh/config    (SSH Client Options)\n"'
+set_common_aliases
+[[ $(uname) == 'macos' ]] &&  set_macos_aliases
